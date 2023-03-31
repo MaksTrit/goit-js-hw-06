@@ -19,16 +19,10 @@ destroy.addEventListener('click', destroyBoxes);
 
 
 function createBoxes(amount) {
-  
-    if (amount) { 
-
-        if (boxes.innerHTML) {
-          boxes.innerHTML = '';
-        }
-
+      if (amount) { 
       let widthBox = 20;
       let heightBox = 20;
-      for (let i = 1; i <= amount; i +=1) {    
+      for (let i = 1; i <= amount; i += 1) {    
         boxes.insertAdjacentHTML("beforeend",
             `<div style="background-color:${getRandomHexColor()}; width:${widthBox += 10}px; height:${heightBox += 10}px;"></div>`);     
       }    

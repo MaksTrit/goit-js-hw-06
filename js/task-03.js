@@ -16,11 +16,10 @@ const images = [
 const imagesList = document.querySelector(".gallery");
 
 function addToGallery(arr, list) {
-  arr.forEach(item => {
-    if (!list.innerHTML.includes(item.url)) {
-      list.insertAdjacentHTML("beforeend", `<li class="img-3"><img src=${item.url} alt=${item.alt} width=200px/></li>`)
-    }
-  });
+  
+  const markup = arr.map(item => `<li class="img-3"><img src=${item.url} alt=${item.alt} width=200px/></li>`).join("");
+  list.insertAdjacentHTML("beforeend", markup);
+  
   return;
 }
 

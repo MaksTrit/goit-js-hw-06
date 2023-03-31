@@ -9,18 +9,18 @@ const ingredients = [
 
 const ingridietsList = document.querySelector("#ingredients");
 
-function addIndridientds(arr,list) {
+function addIndridientds(arr, list) {
+  const arrayList = [];
+
   arr.forEach(item => { 
-    if(!list.innerHTML.includes(item)) {
-      const newItem = document.createElement("li");
-      newItem.classList.add("item");
-      newItem.textContent = item;
-      list.append(newItem);
-    }    
+    const newItem = document.createElement("li");    
+    newItem.classList.add("item");
+    newItem.textContent = item;
+    arrayList.push(newItem);    
   })
+  
+  list.append(...arrayList);
   return;
 }
 
 addIndridientds(ingredients, ingridietsList);
-
-console.log(ingridietsList);
