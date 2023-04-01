@@ -17,18 +17,19 @@ create.addEventListener("click", () =>
 
 destroy.addEventListener('click', destroyBoxes);
 
-
+let sizeBox = 30;
 function createBoxes(amount) {
-      if (amount) { 
-      let widthBox = 20;
-      let heightBox = 20;
+      if (amount) {       
       for (let i = 1; i <= amount; i += 1) {    
         boxes.insertAdjacentHTML("beforeend",
-            `<div style="background-color:${getRandomHexColor()}; width:${widthBox += 10}px; height:${heightBox += 10}px;"></div>`);     
+          `<div style="background-color:${getRandomHexColor()}; width:${sizeBox}px; height:${sizeBox}px;"></div>`);
+        sizeBox += 10;
+        
       }    
     }  
 }
 
 function destroyBoxes() {
-    boxes.innerHTML = '';
+  boxes.innerHTML = '';
+  sizeBox = 30;
   }
